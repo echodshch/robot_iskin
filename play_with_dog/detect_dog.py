@@ -22,7 +22,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('detect_dog.log'),
+        logging.FileHandler('logs/detect_dog.log'),
         logging.StreamHandler()
     ]
 )
