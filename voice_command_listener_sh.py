@@ -8,7 +8,7 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
     handlers=[
-        logging.FileHandler("voice_command_listener.log"),
+        logging.FileHandler("logs/voice_command_listener.log"),
         logging.StreamHandler()
     ]
 )
@@ -32,7 +32,7 @@ def handle_command(command):
 
     if "поиграй с собакой" in command:
         logging.info("Запуск скрипта игры с собакой...")
-        subprocess.Popen(["python3", "detect_dog.py"])
+        subprocess.Popen(["python3", "play_with_dog/detect_dog.py"])
     elif "остановись" in command:
         logging.info("Остановка всех скриптов...")
         subprocess.run(["pkill", "-f", "detect_dog.py"])
