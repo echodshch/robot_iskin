@@ -92,11 +92,6 @@ class NavigationSystem:
         self.CRITICAL_DISTANCE = 20  # см (экстренная остановка)
         self.turn_time = None
 
-    @atexit.register
-    def log_shutdown():
-        with open('/home/mira/last_crash.log', 'a') as f:
-            f.write(f"Shutdown at {time.ctime()}\n")
-
     async def recovery_sequence(self):
         """Полная процедура восстановления после застревания"""
         #logger.info("Запуск комплексного восстановления")
